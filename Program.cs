@@ -24,4 +24,14 @@ List<Service> services = response.StationBoardWithDetails.TrainServices;
 foreach (Service service in services)
 {
    Console.WriteLine($"{service.Std}");
+   Console.WriteLine($"{service.Etd}");
+   Console.WriteLine($"{service.Platform}");
+   Console.WriteLine($"{service.Operator}");
+   Console.WriteLine($"{service.OperatorCode}");
+   Console.WriteLine($"{service.ServiceType}");
+   Console.WriteLine($"{service.Length}");
+   Console.WriteLine($"{service.ServiceId}");
+   Console.WriteLine($"{service.Origin.Location.LocationName}");
+   Console.WriteLine($"{service.Destination.Location.LocationName}");
+   Console.WriteLine($"************");
 }
