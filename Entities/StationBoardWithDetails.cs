@@ -15,6 +15,9 @@ public class StationBoardWithDetails
         [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
         public string Crs { get; set; } = "";
 
+        [XmlElement(ElementName = "nrccMessage", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
+        public string NrccMessage { get; set; } = "";
+
         [XmlElement(ElementName = "filterLocationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
         public string FilterLocationName { get; set; } = "";
 
@@ -24,7 +27,9 @@ public class StationBoardWithDetails
         [XmlElement(ElementName = "platformAvailable", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
         public bool PlatformAvailable { get; set; } = false;
 
-        [XmlArray("TrainServices", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-        // [XmlArrayItem("Service", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-        public List<Service> Services { get; set; } = new List<Service>();
+        // [XmlArray("trainServices", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
+        // [XmlArrayItem("service", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
+        // public List<Service> Services { get; set; } = new List<Service>();
+        [XmlElement("trainServices", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
+        public TrainServices? TrainServices { get; set; }
 }
