@@ -15,7 +15,7 @@ Console.WriteLine($"{response.StationBoardWithDetails.LocationName}");
    Console.WriteLine($"{response.StationBoardWithDetails.FilterLocationName}");
    Console.WriteLine($"{response.StationBoardWithDetails.PlatformAvailable}");
    Console.WriteLine($"{response.StationBoardWithDetails.GeneratedAt}");
-   Console.WriteLine($"{response.StationBoardWithDetails.TrainServices}");
+   Console.WriteLine($"{response.StationBoardWithDetails.NrccMessages[0]}");
 
 Console.WriteLine("Services leaving Colchester are:");
 

@@ -15,8 +15,9 @@ public class StationBoardWithDetails
         [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
         public string Crs { get; set; } = "";
 
-        [XmlElement(ElementName = "nrccMessage", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-        public string NrccMessage { get; set; } = "";
+        [XmlArray(ElementName = "nrccMessages", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
+        [XmlArrayItem(ElementName = "message", Namespace = "http://thalesgroup.com/RTTI/2012-01-13/ldb/types")]
+        public List<string> NrccMessages { get; set; } = [];
 
         [XmlElement(ElementName = "filterLocationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
         public string FilterLocationName { get; set; } = "";
