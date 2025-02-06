@@ -2,12 +2,11 @@ using System.Xml.Serialization;
 
 namespace TrainDepartureBoard.Entities;
 
-[XmlRoot("service", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
 public class Service 
 {
 
     [XmlElement(ElementName = "std", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-    public TimeSpan Std {get; set;}
+    public string Std {get; set;}
 
     [XmlElement(ElementName = "etd", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string Etd {get; set;} = "";

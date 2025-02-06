@@ -19,10 +19,9 @@ Console.WriteLine($"{response.StationBoardWithDetails.LocationName}");
 
 Console.WriteLine("Services leaving Colchester are:");
 
-List<Service> services = response.StationBoardWithDetails.TrainServices.Services;
+List<Service> services = response.StationBoardWithDetails.TrainServices;
 
 foreach (Service service in services)
 {
-   Console.WriteLine($"{service.Destination.Location.LocationName}");
-   Console.WriteLine($"{1}");
+   Console.WriteLine($"{service.Std}");
 }
