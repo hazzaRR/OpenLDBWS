@@ -10,6 +10,12 @@ public class Coach
     [XmlElement("coachClass")]
     public string? CoachClass { get; set; }
 
+    [XmlElement("loading")]
+    public int? Loading { get; set; }
+
+    [XmlElement("loadingSpecified")]
+    public bool? LoadingSpecified { get; set; }
+
     [XmlElement("toilet")]
-    public string? Toilet { get; set; }
+    public ToiletAvailability? Toilet { get; set; }
 }
