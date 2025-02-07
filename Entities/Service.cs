@@ -38,7 +38,7 @@ public class Service
     [XmlElement("formation", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public required Formation Formation {get; set;}
 
-    [XmlElement("subsequentCallingPoints", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
-    public required SubsequentCallingPoints SubsequentCallingPoints {get; set;}
+    [XmlElement("subsequentCallingPoints")]
+    public SubsequentCallingPoints? SubsequentCallingPoints {get; set;}
 
 }

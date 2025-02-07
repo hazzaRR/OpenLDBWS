@@ -18,7 +18,7 @@ foreach(string message in response.StationBoardWithDetails.NrccMessages)
    Console.WriteLine($"{message}");
 }
 
-Console.WriteLine("\nServices leaving Colchester are:\n");
+Console.WriteLine($"\nServices leaving {response.StationBoardWithDetails.LocationName} are:\n");
 
 List<Service> services = response.StationBoardWithDetails.TrainServices;
 
@@ -27,11 +27,21 @@ foreach (Service service in services)
 
    Console.WriteLine($"Platform: {service.Platform}");
    Console.WriteLine($"{service.Std} - {service.Destination.Location.LocationName} {service.Etd}");
+   Console.WriteLine($"From: {service.Origin.Location.LocationName}");
    Console.WriteLine($"Operator: {service.Operator} ({service.OperatorCode})");
    Console.WriteLine($"{service.ServiceType}");
-   Console.WriteLine($"Carriages: {service.Length}");
    Console.WriteLine($"{service.ServiceId}");
-   Console.WriteLine($"From: {service.Origin.Location.LocationName}");
+
+   Console.WriteLine($"Carriages: {service.Length}");
+   Console.WriteLine($"Train Formation:");
+   
+
+   foreach(Coach coach in service.Formation.Coaches)
+   {
+      Console.WriteLine($"{coach.Number} = {coach.CoachClass} {coach.Toilet}");
+   }
+
+   
 
 
    Console.WriteLine($"Calling at:");
