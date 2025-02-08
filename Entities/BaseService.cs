@@ -4,9 +4,6 @@ namespace TrainDepartureBoard.Entities;
 
 public class BaseService
 {
-    [XmlElement("rsid")]
-    public string? Rsid { get; set; }
-
     [XmlArray("origin")]
     [XmlArrayItem("ServiceLocation")]
     public List<ServiceLocation> Origin { get; set; } = [];
@@ -77,18 +74,6 @@ public class BaseService
     [XmlArray("adhocAlerts")]
     [XmlArrayItem("alert")]
     public List<string> AdhocAlerts { get; set; } = [];
-
-    [XmlElement("formation")]
-    public Formation? Formation { get; set; }
-
-    [XmlElement("futureCancellation")]
-    public bool FutureCancellation { get; set; }
-
-    [XmlElement("futureDelay")]
-    public bool FutureDelay { get; set; }
-
-    [XmlElement("diversion")]
-    public ServiceDiversion? Diversion { get; set; }
 
     [XmlElement("uncertainty")]
     public Uncertainty? Uncertainty { get; set; }
