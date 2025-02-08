@@ -6,7 +6,7 @@ public class Service
 {
 
     [XmlElement(ElementName = "std", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
-    public string Std {get; set;}
+    public string Std {get; set;} = "";
 
     [XmlElement(ElementName = "etd", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string Etd {get; set;} = "";
@@ -30,10 +30,10 @@ public class Service
     public string ServiceId {get; set;} = "";
 
     [XmlElement(ElementName = "origin", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
-    public required Station Origin {get; set;}
+    public required ServiceLocation Origin {get; set;}
 
     [XmlElement(ElementName = "destination", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
-    public required Station Destination {get; set;}
+    public required ServiceLocation Destination {get; set;}
     
     [XmlElement("formation", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public required Formation Formation {get; set;}
