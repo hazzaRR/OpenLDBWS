@@ -4,18 +4,18 @@ namespace TrainDepartureBoard.Entities;
 
 public class Coach
 {
-    [XmlAttribute("number")]
+    [XmlAttribute("number", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
     public string? Number { get; set; }
 
-    [XmlElement("coachClass")]
+    [XmlElement("coachClass", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
     public string? CoachClass { get; set; }
 
-    [XmlElement("loading")]
+    [XmlElement("loading", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
     public int? Loading { get; set; }
 
-    [XmlElement("loadingSpecified")]
+    [XmlElement("loadingSpecified", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
     public bool LoadingSpecified { get; set; }
 
-    [XmlElement("toilet")]
+    [XmlElement("toilet", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
     public ToiletAvailability? Toilet { get; set; }
 }

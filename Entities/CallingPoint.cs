@@ -2,22 +2,24 @@ using System.Xml.Serialization;
 
 namespace TrainDepartureBoard.Entities;
 
+
+[XmlRoot("callingPoint", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
 public class CallingPoint
 {
 
-    [XmlElement("locationName")]
+    [XmlElement("locationName", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public string LocationName { get; set; } = "";
 
-    [XmlElement("crs")]
+    [XmlElement("crs", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public string Crs { get; set; } = "";
 
-    [XmlElement("st")]
+    [XmlElement("st", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public string St { get; set; } = "";
 
-    [XmlElement("et")]
+    [XmlElement("et", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public string Et { get; set; } = "";
 
-    [XmlElement("at")]
+    [XmlElement("at", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public string At { get; set; } = "";
 
     [XmlElement("isCancelled")]
@@ -29,7 +31,7 @@ public class CallingPoint
     [XmlElement("detachFront")]
     public bool? DetachFront { get; set;}
 
-    [XmlElement("formation")]
+    [XmlElement("formation", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public Formation? Formation { get; set; }
 
     [XmlElement("adhocAlerts")]
