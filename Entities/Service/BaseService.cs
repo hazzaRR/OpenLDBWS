@@ -5,11 +5,11 @@ namespace TrainDepartureBoard.Entities;
 public class BaseService
 {
     [XmlArray("origin", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
-    [XmlArrayItem("ServiceLocation")]
+    [XmlArrayItem("location", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public List<ServiceLocation> Origin { get; set; } = [];
 
     [XmlArray("destination", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
-    [XmlArrayItem("ServiceLocation")]
+    [XmlArrayItem("location", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public List<ServiceLocation> Destination { get; set; } = [];
 
     [XmlArray("currentOrigins", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]

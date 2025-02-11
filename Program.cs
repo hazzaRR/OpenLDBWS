@@ -28,8 +28,8 @@ foreach (ServiceWithCallingPoints service in services)
 {
 
    Console.WriteLine($"Platform: {service.Platform}");
-   // Console.WriteLine($"{service.Std} - {service.Destination[0].LocationName} {service.Etd}");
-   // Console.WriteLine($"From: {service.Origin[0].LocationName}");
+   Console.WriteLine($"{service.Std} - {service.Destination[0].LocationName} {service.Etd}");
+   Console.WriteLine($"From: {service.Origin[0].LocationName}");
    Console.WriteLine($"Operator: {service.Operator} ({service.OperatorCode})");
    Console.WriteLine($"{service.ServiceType}");
    Console.WriteLine($"{service.ServiceID}");

@@ -1,13 +1,16 @@
 using System.Xml.Serialization;
 
 namespace TrainDepartureBoard.Entities;
+
+
+[XmlRoot(ElementName = "location", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
 public class ServiceLocation 
 {
 
-    [XmlElement(ElementName = "locationName")]
+    [XmlElement(ElementName = "locationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string LocationName {get; set;} = "";
 
-    [XmlElement(ElementName = "crs")]
+    [XmlElement(ElementName = "crs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string Crs {get; set;} = "";
 
     [XmlElement(ElementName = "via")]
