@@ -4,41 +4,41 @@ namespace TrainDepartureBoard.Entities;
 
 public class BaseService
 {
-    [XmlArray("origin")]
+    [XmlArray("origin", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
     [XmlArrayItem("ServiceLocation")]
     public List<ServiceLocation> Origin { get; set; } = [];
 
-    [XmlArray("destination")]
+    [XmlArray("destination", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
     [XmlArrayItem("ServiceLocation")]
     public List<ServiceLocation> Destination { get; set; } = [];
 
-    [XmlArray("currentOrigins")]
+    [XmlArray("currentOrigins", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
     [XmlArrayItem("ServiceLocation")]
-    public List<ServiceLocation> CurrentOrigins { get; set; } = [];
+    public List<ServiceLocation>? CurrentOrigins { get; set; }
 
-    [XmlArray("currentDestinations")]
+    [XmlArray("currentDestinations", Namespace = "http://thalesgroup.com/RTTI/2016-02-16/ldb/types")]
     [XmlArrayItem("ServiceLocation")]
-    public List<ServiceLocation> CurrentDestinations { get; set; } =[];
+    public List<ServiceLocation>? CurrentDestinations { get; set; }
 
-    [XmlElement("sta")]
+    [XmlElement("sta", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Sta { get; set; }
 
-    [XmlElement("eta")]
+    [XmlElement("eta", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Eta { get; set; }
 
-    [XmlElement("std")]
+    [XmlElement("std", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Std { get; set; }
 
-    [XmlElement("etd")]
+    [XmlElement("etd", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Etd { get; set; }
 
-    [XmlElement("platform")]
+    [XmlElement("platform", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Platform { get; set; }
 
-    [XmlElement("operator")]
+    [XmlElement("operator", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? Operator { get; set; }
 
-    [XmlElement("operatorCode")]
+    [XmlElement("operatorCode", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? OperatorCode { get; set; }
 
     [XmlElement("isCircularRoute")]
@@ -50,28 +50,28 @@ public class BaseService
     [XmlElement("filterLocationCancelled")]
     public bool FilterLocationCancelled { get; set; }
 
-    [XmlElement("serviceType")]
+    [XmlElement("serviceType", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string ServiceType { get; set; } = "";
 
     [XmlElement("length")]
     public int Length { get; set; } = 0;
 
     [XmlElement("detachFront")]
-    public bool DetachFront { get; set; }
+    public bool? DetachFront { get; set; }
 
     [XmlElement("isReverseFormation")]
-    public bool IsReverseFormation { get; set; }
+    public bool? IsReverseFormation { get; set; }
 
-    [XmlElement("cancelReason")]
+    [XmlElement("cancelReason", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? CancelReason { get; set; }
 
-    [XmlElement("delayReason")]
+    [XmlElement("delayReason", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string? DelayReason { get; set; }
 
-    [XmlElement("serviceID")]
+    [XmlElement("serviceID", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string ServiceID { get; set; } = "";
 
-    [XmlArray("adhocAlerts")]
+    [XmlArray("adhocAlerts", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     [XmlArrayItem("alert")]
     public List<string> AdhocAlerts { get; set; } = [];
 

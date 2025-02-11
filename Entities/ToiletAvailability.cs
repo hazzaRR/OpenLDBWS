@@ -1,4 +1,5 @@
 using System.Xml.Serialization;
+using TrainDepartureBoard.Enums;
 
 namespace TrainDepartureBoard.Entities;
 

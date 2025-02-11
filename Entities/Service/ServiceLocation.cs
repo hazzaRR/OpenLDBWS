@@ -4,11 +4,11 @@ namespace TrainDepartureBoard.Entities;
 public class ServiceLocation 
 {
 
-    [XmlElement(ElementName = "location")]
-    public required Location Location {get; set;}
+    [XmlElement(ElementName = "locationName")]
+    public string LocationName {get; set;} = "";
 
     [XmlElement(ElementName = "crs")]
-    public required string Crs {get; set;}
+    public string Crs {get; set;} = "";
 
     [XmlElement(ElementName = "via")]
     public string? Via {get; set;}

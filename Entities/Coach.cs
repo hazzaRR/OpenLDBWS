@@ -14,7 +14,7 @@ public class Coach
     public int? Loading { get; set; }
 
     [XmlElement("loadingSpecified")]
-    public bool? LoadingSpecified { get; set; }
+    public bool LoadingSpecified { get; set; }
 
     [XmlElement("toilet")]
     public ToiletAvailability? Toilet { get; set; }
