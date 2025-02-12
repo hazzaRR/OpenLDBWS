@@ -7,6 +7,6 @@ public class DeparturesBoardWithDetails : BaseDeparturesBoard
 
     [XmlArray("departures")]
     [XmlArrayItem("departure")]
-    public List<DepartureWithCallingPoints> Departures { get; set; } = [];
+    public List<DepartureWithDetails> Departures { get; set; } = [];
 
 }
