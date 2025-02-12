@@ -8,7 +8,6 @@ public class LdbwsClient : ILdbwsClient
 {
     private readonly string _apiKey;
     private readonly string _url;
-
     public LdbwsClient(string apiKey)
     {
         _apiKey = apiKey;
@@ -45,8 +44,9 @@ public class LdbwsClient : ILdbwsClient
         return content;
     }
 
-    public async Task<GetDepBoardWithDetailsResponse> GetDepBoardWithDetails(int numRows, string crs, int timeWindow, string filterCrs = "", string filterType = "to", int timeOffset = 0)
+    private async Task<string> SendSoapReqiest(string requestBody)
     {
+
         string soapRequest = $@"
         <soap:Envelope xmlns:soap=""http://www.w3.org/2003/05/soap-envelope"" xmlns:typ=""http://thalesgroup.com/RTTI/2013-11-28/Token/types"" xmlns:ldb=""http://thalesgroup.com/RTTI/2021-11-01/ldb/"">
         <soap:Header>
@@ -55,16 +55,10 @@ public class LdbwsClient : ILdbwsClient
             </typ:AccessToken>
         </soap:Header>
         <soap:Body>
-            <ldb:GetDepBoardWithDetailsRequest>
-                <ldb:numRows>{numRows}</ldb:numRows>
-                <ldb:crs>{crs}</ldb:crs>
-                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
-                <ldb:filterType>{filterType}</ldb:filterType>
-                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
-                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
-            </ldb:GetDepBoardWithDetailsRequest>
+        {requestBody}
         </soap:Body>
         </soap:Envelope>";
+
 
         using (HttpClient client = new())
         {
@@ -76,8 +70,32 @@ public class LdbwsClient : ILdbwsClient
             HttpResponseMessage response = await client.SendAsync(request);
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            return DeserialiseSoapResponse<GetDepBoardWithDetailsResponse>(responseBody);
+            return responseBody;
         }
+
+    }
+
+    public async Task<GetDepBoardWithDetailsResponse> GetDepBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        string soapRequest = $@"
+            <ldb:GetDepBoardWithDetailsRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetDepBoardWithDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetDepBoardWithDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
 }

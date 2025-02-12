@@ -6,7 +6,7 @@ string destinationStationCode = "LST";
 
 LdbwsClient client = new LdbwsClient("72a8196c-6306-4f02-8194-6225e3eee456");
 
-GetDepBoardWithDetailsResponse response = await client.GetDepBoardWithDetails(2, departureStationCode, 120, destinationStationCode);
+GetDepBoardWithDetailsResponse response = await client.GetDepBoardWithDetails(2, departureStationCode, destinationStationCode);
 
 Console.WriteLine($"Station Board for: {response.StationBoardWithDetails.LocationName}({response.StationBoardWithDetails.Crs})");
 Console.WriteLine($"For Services to: {response.StationBoardWithDetails.FilterLocationName}({response.StationBoardWithDetails.FilterCrs})");
