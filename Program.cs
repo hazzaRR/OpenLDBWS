@@ -41,7 +41,14 @@ foreach (ServiceWithCallingPoints service in services)
    foreach (CallingPoint callingPoint in service.SubsequentCallingPoints.CallingPoints)
    {
       Console.WriteLine($"-{callingPoint.LocationName}({callingPoint.Crs}), {callingPoint.St} - {callingPoint.Et}");
-      Console.WriteLine(callingPoint.Formation.Coaches.Count);
+      Console.WriteLine(callingPoint.Length);
+      if (callingPoint.Formation != null)
+      {
+        foreach(Coach coach in callingPoint.Formation.Coaches)
+        {
+         Console.WriteLine(coach.Number);
+        }
+      }
    }
    Console.WriteLine($"************");
 }

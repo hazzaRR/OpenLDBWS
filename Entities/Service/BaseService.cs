@@ -53,7 +53,7 @@ public class BaseService
     [XmlElement("serviceType", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string ServiceType { get; set; } = "";
 
-    [XmlElement("length")]
+    [XmlElement("length", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public int Length { get; set; } = 0;
 
     [XmlElement("detachFront")]

@@ -25,7 +25,7 @@ public class CallingPoint
     [XmlElement("isCancelled")]
     public bool? IsCancelled { get; set; }
     
-    [XmlElement("length")]
+    [XmlElement("length", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public int Length { get; set; }
 
     [XmlElement("detachFront")]

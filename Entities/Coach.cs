@@ -2,6 +2,8 @@ using System.Xml.Serialization;
 
 namespace TrainDepartureBoard.Entities;
 
+
+[XmlRoot("coach", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
 public class Coach
 {
     [XmlAttribute("number", Namespace = "http://thalesgroup.com/RTTI/2017-10-01/ldb/types")]
