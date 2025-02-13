@@ -98,53 +98,260 @@ public class LdbwsClient : ILdbwsClient
         throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetArrBoardWithDetailsResponse> GetArrBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetArrBoardWithDetailsResponse> GetArrBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetArrBoardWithDetailsRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetArrBoardWithDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetArrBoardWithDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetArrDepBoardWithDetailsResponse> GetArrDepBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetArrDepBoardWithDetailsResponse> GetArrDepBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetArrDepBoardWithDetailsRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetArrDepBoardWithDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetArrDepBoardWithDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetArrivalBoardResponse> GetArrivalBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetArrivalBoardResponse> GetArrivalBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetArrivalBoardRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetArrivalBoardRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetArrivalBoardResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetArrivalDepartureBoardResponse> GetArrivalDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetArrivalDepartureBoardResponse> GetArrivalDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetArrivalDepartureBoardRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetArrivalDepartureBoardRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetArrivalDepartureBoardResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetDepartureBoardResponse> GetDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetDepartureBoardResponse> GetDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetDepartureBoardRequest>
+                <ldb:numRows>{numRows}</ldb:numRows>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterCrs>{filterCrs}</ldb:filterCrs>
+                <ldb:filterType>{filterType}</ldb:filterType>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetDepartureBoardRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetDepartureBoardResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetFastestDeparturesResponse> GetFastestDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetFastestDeparturesResponse> GetFastestDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        StringBuilder crsList = new StringBuilder("");
+
+        foreach(string filterCrs in filterCrsList)
+        {
+            crsList.AppendFormat($"<ldb:crs>{filterCrs}</ldb:crs>\n");
+        }
+
+
+        string soapRequest = $@"
+            <ldb:GetFastestDeparturesRequest>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterList>
+                    {crsList}
+                </ldb:filterList>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetFastestDeparturesRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetFastestDeparturesResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetFastestDeparturesWithDetailsResponse> GetFastestDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetFastestDeparturesWithDetailsResponse> GetFastestDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        StringBuilder crsList = new StringBuilder("");
+
+        foreach(string filterCrs in filterCrsList)
+        {
+            crsList.AppendFormat($"<ldb:crs>{filterCrs}</ldb:crs>\n");
+        }
+
+
+        string soapRequest = $@"
+            <ldb:GetFastestDeparturesWithDetailsRequest>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterList>
+                    {crsList}
+                </ldb:filterList>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetFastestDeparturesWithDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetFastestDeparturesWithDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetNextDeparturesResponse> GetNextDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetNextDeparturesResponse> GetNextDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        StringBuilder crsList = new StringBuilder("");
+
+        foreach(string filterCrs in filterCrsList)
+        {
+            crsList.AppendFormat($"<ldb:crs>{filterCrs}</ldb:crs>\n");
+        }
+
+
+        string soapRequest = $@"
+            <ldb:GetNextDeparturesRequest>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterList>
+                    {crsList}
+                </ldb:filterList>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetNextDeparturesRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetNextDeparturesResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetNextDeparturesWithDetailsResponse> GetNextDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    public async Task<GetNextDeparturesWithDetailsResponse> GetNextDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
     {
-        throw new NotImplementedException();
+        StringBuilder crsList = new StringBuilder("");
+
+        foreach(string filterCrs in filterCrsList)
+        {
+            crsList.AppendFormat($"<ldb:crs>{filterCrs}</ldb:crs>\n");
+        }
+
+
+        string soapRequest = $@"
+            <ldb:GetNextDeparturesWithDetailsRequest>
+                <ldb:crs>{crs}</ldb:crs>
+                <ldb:filterList>
+                    {crsList}
+                </ldb:filterList>
+                <ldb:timeOffset>{timeOffset}</ldb:timeOffset>
+                <ldb:timeWindow>{timeWindow}</ldb:timeWindow>
+            </ldb:GetNextDeparturesWithDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetNextDeparturesWithDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 
-    public Task<GetServiceDetailsResponse> GetServiceDetails(string serviceId)
+    public async Task<GetServiceDetailsResponse> GetServiceDetails(string serviceId)
     {
-        throw new NotImplementedException();
+        string soapRequest = $@"
+            <ldb:GetServiceDetailsRequest>
+                <ldb:serviceID>{serviceId}</ldb:serviceID>
+            </ldb:GetServiceDetailsRequest>";
+
+
+        string response = await SendSoapReqiest(soapRequest);
+
+        if (response != null)
+        {
+            return DeserialiseSoapResponse<GetServiceDetailsResponse>(response);
+        }
+
+        throw new Exception("Unable to get response from api");
     }
 }
