@@ -46,7 +46,7 @@ foreach (ServiceWithCallingPoints service in services)
       {
         foreach(Coach coach in callingPoint.Formation.Coaches)
         {
-         Console.WriteLine(coach.Number);
+         Console.WriteLine($"{coach.Number}, {coach.CoachClass}, {(coach.Toilet != null ? coach.Toilet.Status : "none")}");
         }
       }
    }

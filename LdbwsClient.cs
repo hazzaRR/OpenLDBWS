@@ -98,4 +98,53 @@ public class LdbwsClient : ILdbwsClient
         throw new Exception("Unable to get response from api");
     }
 
+    public Task<GetArrBoardWithDetailsResponse> GetArrBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetArrDepBoardWithDetailsResponse> GetArrDepBoardWithDetails(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetArrivalBoardResponse> GetArrivalBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetArrivalDepartureBoardResponse> GetArrivalDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetDepartureBoardResponse> GetDepartureBoard(int numRows, string crs, string filterCrs = "", string filterType = "to", int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetFastestDeparturesResponse> GetFastestDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetFastestDeparturesWithDetailsResponse> GetFastestDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetNextDeparturesResponse> GetNextDepartures(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetNextDeparturesWithDetailsResponse> GetNextDeparturesWithDetails(string crs, List<string> filterCrsList, int timeOffset = 0, int timeWindow = 120)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<GetServiceDetailsResponse> GetServiceDetails(string serviceId)
+    {
+        throw new NotImplementedException();
+    }
 }
