@@ -4,9 +4,9 @@ namespace TrainDepartureBoard.Entities;
 
 public class Departure
 {
-    [XmlElement("crs")]
+    [XmlAttribute("crs")]
     public string Crs { get; set; } = "";
 
-    [XmlElement("service")]
+    [XmlElement("service", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]
     public List<Service> Service { get; set;} = [];
 }

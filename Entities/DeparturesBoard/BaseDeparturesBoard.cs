@@ -4,29 +4,29 @@ namespace TrainDepartureBoard.Entities;
 
 public class BaseDeparturesBoard
 {
-    [XmlElement("generatedAt")]
+    [XmlElement("generatedAt", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string GeneratedAt { get; set; } = "";
 
-    [XmlElement("locationName")]
+    [XmlElement("locationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string LocationName { get; set; } = "";
 
-    [XmlElement("crs")]
+    [XmlElement("crs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string Crs { get; set; } = "";
 
-    [XmlElement("filterLocationName")]
+    [XmlElement("filterLocationName", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string FilterLocationName { get; set; } = "";
 
-    [XmlElement("filtercrs")]
+    [XmlElement("filtercrs", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public string FilterCrs { get; set; } = "";
 
     [XmlElement("filterType")]
     public string FilterType { get; set; } = "";
 
-    [XmlArray("nrccMessages")]
+    [XmlArray("nrccMessages", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     [XmlArrayItem("message")]
     public List<string> NrccMessages { get; set; } = [];
 
-    [XmlElement("platformAvailable")]
+    [XmlElement("platformAvailable", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]
     public bool? PlatformAvailable { get; set; }
 
     [XmlElement("areServicesAvailable")]
