@@ -1,4 +1,4 @@
-namespace TrainDepartureBoard.Enums;
+namespace OpenLDBWS.Enums;
 public enum ToiletStatus
 {
     Unknown,

@@ -1,10 +1,10 @@
-﻿using TrainDepartureBoard;
-using TrainDepartureBoard.Entities;
+﻿using OpenLDBWS;
+using OpenLDBWS.Entities;
 
 string departureStationCode = "COL";
 string destinationStationCode = "LST";
 
-LdbwsClient client = new LdbwsClient("72a8196c-6306-4f02-8194-6225e3eee456");
+LdbwsClient client = new("72a8196c-6306-4f02-8194-6225e3eee456");
 
 GetDepBoardWithDetailsResponse response = await client.GetDepBoardWithDetails(2, departureStationCode, destinationStationCode);
 

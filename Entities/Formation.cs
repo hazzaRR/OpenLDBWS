@@ -1,5 +1,5 @@
 using System.Xml.Serialization;
-namespace TrainDepartureBoard.Entities;
+namespace OpenLDBWS.Entities;
 public class Formation 
 {
 

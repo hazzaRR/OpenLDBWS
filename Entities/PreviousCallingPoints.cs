@@ -1,7 +1,7 @@
 using System.Xml.Serialization;
-using TrainDepartureBoard.Entities;
+using OpenLDBWS.Entities;
 
-namespace TrainDepartureBoard.Entities;
+namespace OpenLDBWS.Entities;
 
 public class PreviousCallingPoints
 {

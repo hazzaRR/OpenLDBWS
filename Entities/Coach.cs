@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace TrainDepartureBoard.Entities;
+namespace OpenLDBWS.Entities;
 
 
 [XmlRoot("coach", Namespace = "http://thalesgroup.com/RTTI/2021-11-01/ldb/types")]

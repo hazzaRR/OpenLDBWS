@@ -1,7 +1,7 @@
 using System.Xml.Serialization;
-using TrainDepartureBoard.Enums;
+using OpenLDBWS.Enums;
 
-namespace TrainDepartureBoard.Entities;
+namespace OpenLDBWS.Entities;
 
 public class Uncertainty
 {

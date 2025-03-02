@@ -1,6 +1,6 @@
-using TrainDepartureBoard.Entities;
+using OpenLDBWS.Entities;
 
-namespace TrainDepartureBoard;
+namespace OpenLDBWS;
 
 public interface ILdbwsClient
 {

@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace TrainDepartureBoard.Entities;
+namespace OpenLDBWS.Entities;
 
 
 [XmlRoot(ElementName = "location", Namespace = "http://thalesgroup.com/RTTI/2015-11-27/ldb/types")]

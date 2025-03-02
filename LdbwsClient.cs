@@ -1,9 +1,9 @@
 using System.Xml;
 using System.Xml.Serialization;
-using TrainDepartureBoard.Entities;
+using OpenLDBWS.Entities;
 using System.Text;
 
-namespace TrainDepartureBoard;
+namespace OpenLDBWS;
 public class LdbwsClient : ILdbwsClient
 {
     private readonly string _apiKey;
