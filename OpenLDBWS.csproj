@@ -12,6 +12,8 @@
     <Compile Include="ILdbwsClient.cs"/>
     <Compile Include="Entities/**"/>
     <Compile Include="Enums/**"/>
+    <!-- <Compile Remove="Examples/**" /> -->
+    <!-- <None Remove="examples/**" /> -->
   </ItemGroup>
 
 </Project>
